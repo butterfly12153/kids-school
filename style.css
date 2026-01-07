@@ -11,9 +11,18 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
 .container {
-  width: 1160px;
+  max-width: 1160px;
   margin: 0 auto;
+  padding-inline: 1.25rem;
 }
 
 .display-flex {
@@ -30,20 +39,19 @@
 }
 
 .bg {
-  background: url(./assets/bg.png) no-repeat center;
+  background-image: url(./assets/bg.png),
+    linear-gradient(to bottom, white 50%, #fea10150);
 }
 
-/* --------------Header----------------- */
-
+/* -------------------Header------------------- */
 .nav-container {
   justify-content: space-between;
   align-items: center;
-  margin-block: 1rem;
+  padding-block: 1rem;
 }
 
 .logo {
   align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 
@@ -89,6 +97,15 @@
 .hero-content {
   flex-direction: column;
   gap: 1rem;
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+}
+
+.hero-img {
+  flex: 1;
 }
 
 .button {
@@ -108,65 +125,59 @@
 
 /* ---------------------Main section----------------------- */
 
-.our-stories {
-  background-image: linear-gradient(to bottom, white 70%, #fea10161);
-}
-
 /* curriculum */
 .curriculum {
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-block: 4rem;
 }
 
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-block: 5rem;
+  margin-block: 4rem;
+}
+
+.card-container > div {
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1rem;
+  box-shadow: #63636333 0px 2px 8px 0px;
+  background-color: #fff;
+}
+
+.card-container > div img {
+  width: 50%;
+}
+
+.card-container > div button {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .card-1 {
-  padding: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  border-radius: 1rem;
-  box-shadow: #63636333 0px 2px 8px 0px;
   background-image: linear-gradient(to top, white 70%, #64c9ff48);
+}
+.card-2 {
+  background-image: linear-gradient(to top, white 70%, #f0a8003b);
+}
+.card-3 {
+  background-image: linear-gradient(to top, white 70%, #8800ff37);
 }
 
 .readmore-1 {
   color: #64c8ff;
 }
-
-.card-2 {
-  padding: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  border-radius: 1rem;
-  box-shadow: #63636333 0px 2px 8px 0px;
-  background-image: linear-gradient(to top, white 70%, #f0a8003b);
-}
-
 .readmore-2 {
   color: #f0aa00;
 }
-
-.card-3 {
-  padding: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  border-radius: 1rem;
-  box-shadow: #63636333 0px 2px 8px 0px;
-  background-image: linear-gradient(to top, white 70%, #8800ff37);
-}
-
 .readmore-3 {
   color: #8700ff;
 }
@@ -177,9 +188,13 @@
   text-align: center;
 }
 
-.bx-chevron-left,
-.bx-chevron-right {
-  color: red;
+.controller {
+  display: flex;
+  gap: 1rem;
+}
+
+.controller button {
+  border: none;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -188,23 +203,27 @@
   font-size: 3rem;
 }
 
+.bx-chevron-left,
+.bx-chevron-right {
+  color: white;
+  font-size: 3rem;
+}
+
 /* ------------------our story---------------------- */
-#our-stories {
+.our-stories {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block: 5rem;
+  padding-bottom: 3rem;
+  margin-top: 6rem;
 }
 
 .story-card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  row-gap: 1rem;
-  column-gap: 1rem;
-  margin-block: 5rem;
-  /* flex: 1; */
+  gap: 1rem;
+  margin-block: 4rem;
 }
 
 .card-4 {
@@ -212,40 +231,39 @@
   grid-column: span 2;
 }
 
+/* card */
+.story-card-container > div {
+  background-color: #fff;
+  box-shadow: #63636333 0px 2px 8px 0px;
+  border-radius: 1rem;
+  line-height: 1.8rem;
+  overflow: hidden;
+}
+
 .card-6-1,
 .card-6-2 {
   display: none;
 }
 
-/* card */
-.card-4,
-.card-5,
-.card-6,
-.card-7,
-.card-8 {
-  box-shadow: #63636333 0px 2px 8px 0px;
-  border-radius: 1rem;
-  line-height: 1.8rem;
-}
-
-.img-container {
-  position: relative;
-}
-
-.card-img {
-  border-radius: 1rem 1rem 0 0;
-}
-
 .btn {
-  position: absolute;
-  top: 90%;
-  left: 8%;
+  width: max-content;
   background: #3cd8e8;
   color: white;
-  padding: 0.6rem;
+  padding: 0.6rem 1rem;
   border-radius: 3rem;
-  /* transform: translateX(3rem) translateY(-1.5rem); */
+  font-size: 0.9rem;
+  transform: translateX(2rem) translateY(-1.9rem);
 }
+
+/* .card-info {
+  flex-direction: column;
+  padding: 0 2rem 3rem;
+  gap: 2rem;
+} */
+
+/* .card-info h2 {
+  margin-bottom: 1rem;
+} */
 
 .card-5 .btn,
 .card-7 .btn,
@@ -261,18 +279,15 @@
 .card-6 .btn,
 .card-7 .btn,
 .card-8 .btn {
-  top: 82%;
-  padding: 0.4rem;
-}
-
-.card-info {
-  flex-direction: column;
-  padding: 2rem;
-  gap: 2rem;
+  padding-block: 0.3rem;
 }
 
 .story-title {
-  padding: 2rem;
+  padding: 0 2rem 1.5rem 2rem;
+}
+
+.story-title ~ p {
+  padding: 0 2rem 2rem;
 }
 
 .story-description {
@@ -287,7 +302,7 @@ footer {
 
 .footer-container {
   justify-content: space-between;
-  padding-block: 5rem;
+  padding-block: 8rem;
 }
 
 .footer-container > div {
@@ -300,12 +315,13 @@ footer {
 }
 
 .edu-logo {
+  /* width: 50%; */
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
 .edu-logo img {
-  height: 72%;
+  width: 20%;
 }
 
 .edu-description {
@@ -318,130 +334,90 @@ footer {
 }
 
 .nav-title {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .about li {
   list-style: none;
-  margin-bottom: 0.5rem;
+  margin-block: 1rem;
+  cursor: pointer;
 }
 
 /* touch */
+.touch > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.touch > div img {
+  width: 10%;
+  cursor: pointer;
+}
+
 .touch h3 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* ----------------------responsive------------------ */
 @media screen and (max-width: 576px) {
-  /* header */
-  .nav-container {
-    padding: 1.5rem;
-  }
-
-  .navbar {
-    display: none;
-  }
-
-  .contact {
+  .logo h2,
+  .nav-container .navbar,
+  .nav-container .contact {
     display: none;
   }
 
   .bx-menu {
     display: block;
-    font-size: 3.5rem;
+    font-size: 2rem;
+    cursor: pointer;
   }
 
-  .logo img {
-    aspect-ratio: 1/1;
-    width: 6rem;
-  }
-
-  .logo h2 {
-    display: none;
-  }
-
-  /* hero section */
   .hero {
     flex-direction: column-reverse;
-    padding-inline: 1.5rem;
-  }
-
-  .hero-content,
-  .hero-img,
-  .hero-img img {
-    width: 100%;
+    gap: 2rem;
   }
 
   .hero-content {
+    font-size: 1.2rem;
     text-align: center;
-    padding: 5rem;
+    gap: 1.25rem;
+    padding-inline: 1rem;
   }
 
-  .hero-title {
-    font-size: 5rem;
-  }
-
-  .hero-description {
-    font-size: 2.3rem;
-  }
-
-  .button {
-    margin: 0 auto;
-    width: auto;
-    padding: 2rem;
-    font-size: 3rem;
-    border-radius: 1.5rem;
+  .hero-content .button {
+    align-self: center;
+    /* margin: 0 auto; */
   }
 
   /* curriculum */
   .curriculum h1 {
-    font-size: 5rem;
+    font-size: 1.9rem;
   }
 
   .card-container {
     grid-template-columns: 1fr;
-    padding-inline: 1.5rem;
-    width: 100%;
-    gap: 5rem;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
   }
 
-  .card-1,
-  .card-2,
-  .card-3 {
-    width: 100%;
-    aspect-ratio: 1/1;
-    padding: 10rem;
-    gap: 5rem;
+  .card-container > div {
+    padding: 3rem 6rem;
   }
 
-  .image {
-    height: auto;
-    width: 40%;
-  }
-  .card-title {
-    font-size: 3rem;
-  }
-
-  .card-description {
-    font-size: 2rem;
-    line-height: 4rem;
-  }
-
-  .readmore-1,
-  .readmore-2,
-  .readmore-3 {
-    font-size: 2.5rem;
-    font-weight: bold;
+  .card-container img {
+    width: 50%;
   }
 
   .controller {
     display: none;
   }
 
-  /*our stories  */
+  /* our stories */
   .story-card-container {
     grid-template-columns: repeat(2, 1fr);
+    font-size: 0.9rem;
   }
+
   .card-4 {
     display: none;
   }
@@ -451,8 +427,18 @@ footer {
     display: block;
   }
 
-  .our-stories .button {
-    font-size: 0.5rem;
-    padding: 1rem 5rem;
+  /* footer */
+  .footer-container {
+    flex-direction: column;
+    gap: 3rem;
+    padding-block: 5rem;
+  }
+
+  .edu-logo img {
+    width: 14%;
+  }
+
+  .about {
+    justify-items: flex-start;
   }
 }
